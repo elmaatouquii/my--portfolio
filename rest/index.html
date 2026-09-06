@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monsieur Moutarde | Brasserie Française à Casablanca</title>
+  <meta name="description" content="Monsieur Moutarde fait de la brasserie française sans détour en plein Gauthier, Casablanca. Cordon bleu, souris d'agneau, tarte aux pommes.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <svg class="mustache-icon" viewBox="0 0 100 100" width="56" height="56" fill="var(--gold)">
+        <path d="M 30 40 L 30 15 C 30 10 35 5 50 5 C 65 5 70 10 70 15 L 70 40 Z" />
+        <rect x="15" y="40" width="70" height="8" rx="4" />
+        <circle cx="65" cy="60" r="7" fill="none" stroke="var(--gold)" stroke-width="3" />
+        <path d="M 72 60 Q 80 70 85 85" fill="none" stroke="var(--gold)" stroke-width="2" />
+        <path d="M 50 68 C 40 68 35 75 25 75 C 15 75 10 65 5 60 C 15 85 35 85 50 78 C 65 85 85 85 95 60 C 90 65 85 75 75 75 C 65 75 60 68 50 68 Z" />
+      </svg>
+      <span>MM</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">
+      <svg class="mustache-icon" viewBox="0 0 100 100" width="38" height="38" fill="var(--gold)">
+        <path d="M 30 40 L 30 15 C 30 10 35 5 50 5 C 65 5 70 10 70 15 L 70 40 Z" />
+        <rect x="15" y="40" width="70" height="8" rx="4" />
+        <circle cx="65" cy="60" r="7" fill="none" stroke="var(--gold)" stroke-width="3" />
+        <path d="M 72 60 Q 80 70 85 85" fill="none" stroke="var(--gold)" stroke-width="2" />
+        <path d="M 50 68 C 40 68 35 75 25 75 C 15 75 10 65 5 60 C 15 85 35 85 50 78 C 65 85 85 85 95 60 C 90 65 85 75 75 75 C 65 75 60 68 50 68 Z" />
+      </svg>
+      <span>Monsieur Moutarde</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" data-i18n="nav_history">Notre Histoire</a></li>
+      <li><a href="#signature" data-i18n="nav_signatures">Signatures</a></li>
+      <li><a href="#menu" data-i18n="nav_menu">La Carte</a></li>
+      <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+      <li><a href="#reviews" data-i18n="nav_reviews">Avis</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav_book">Réserver</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <div class="lang-dropdown">
+        <button class="lang-btn" id="lang-btn">
+          <img src="https://flagcdn.com/w20/fr.png" alt="FR" class="lang-flag">
+          <span>FR</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <a href="#" class="lang-option active" data-lang="fr">
+            <img src="https://flagcdn.com/w20/fr.png" alt="FR" class="lang-flag"> FR
+          </a>
+          <a href="#" class="lang-option" data-lang="en">
+            <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="lang-flag"> EN
+          </a>
+          <a href="#" class="lang-option" data-lang="ar">
+            <img src="https://flagcdn.com/w20/ma.png" alt="AR" class="lang-flag"> AR
+          </a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_badge">Brasserie Française</div>
+      <h1 class="hero-title">Monsieur Moutarde</h1>
+      <h2 class="hero-subtitle" data-i18n="hero_subtitle">Vin & Cuisine</h2>
+      <p class="hero-tagline" data-i18n="hero_tagline">Ici, on mange et on trinque à la française, en plein cœur du quartier Gauthier à Casablanca.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary" data-i18n="hero_btn_menu">Découvrir la Carte</a>
+        <a href="#contact" class="btn-outline" data-i18n="hero_btn_book">Réserver une Table</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section section-cream">
+    <div class="about-grid reveal">
+      <div class="about-image-wrapper">
+        <div class="about-accent"></div>
+        <img src="image.png" alt="Devanture Monsieur Moutarde" class="about-image" loading="lazy">
+      </div>
+      <div class="about-text">
+        <span class="section-label" data-i18n="about_label">L'Esprit Brasserie</span>
+        <h3 data-i18n="about_title">Une ambiance conviviale de quartier</h3>
+        <p data-i18n="about_p1">Rue Badr Assayab, en plein Gauthier, Monsieur Moutarde fait de la brasserie française sans détour : un cordon bleu qui tient son rang, une souris d'agneau qui a ses habitués, et une tarte aux pommes qu'on commande même quand on n'a plus faim.</p>
+        <p data-i18n="about_p2">L'ambiance est celle d'une vraie brasserie de quartier — conviviale, un peu animée le midi — et le service va droit au but. C'est l'adresse du déjeuner professionnel, du repas entre collègues, ou d'un dîner sans cérémonie où l'on veut surtout bien manger.</p>
+        
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">🍷</div>
+            <span data-i18n="feat_wine">Sélection de Vins</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🧑‍🍳</div>
+            <span data-i18n="feat_home">Fait Maison</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🕒</div>
+            <span data-i18n="feat_hours">Service Continu 7/7</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">📍</div>
+            <span data-i18n="feat_loc">En Plein Gauthier</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Dishes -->
+  <section id="signature" class="section">
+    <div class="section-header reveal">
+      <span class="section-label" data-i18n="sig_label">À Ne Pas Manquer</span>
+      <h2 class="section-title" data-i18n="sig_title">Nos Plats Signatures</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="dishes-grid reveal">
+      <div class="dish-card">
+        <img src="images/cordonbleu.png" alt="Cordon Bleu" loading="lazy">
+        <div class="dish-card-overlay">
+          <h4>Cordon Bleu</h4>
+          <p data-i18n="sig_cordon_desc">Frites et salade, une tradition qui tient son rang.</p>
+        </div>
+        <div class="dish-price">185 DH</div>
+      </div>
+      <div class="dish-card">
+        <img src="images/agneau.png" alt="Souris d'Agneau" loading="lazy">
+        <div class="dish-card-overlay">
+          <h4>Souris d'Agneau</h4>
+          <p data-i18n="sig_agneau_desc">Aux épices des mille et une nuits.</p>
+        </div>
+        <div class="dish-price">280 DH</div>
+      </div>
+      <div class="dish-card">
+        <img src="images/tarte.png" alt="Tarte aux Pommes" loading="lazy">
+        <div class="dish-card-overlay">
+          <h4 data-i18n="sig_tarte_title">Tarte Fine aux Pommes</h4>
+          <p data-i18n="sig_tarte_desc">Et sa boule de glace, qu'on commande même quand on n'a plus faim.</p>
+        </div>
+        <div class="dish-price">95 DH</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="section section-dark">
+    <div class="section-header reveal">
+      <span class="section-label" data-i18n="menu_label">Notre Cuisine</span>
+      <h2 class="section-title" data-i18n="menu_title">La Carte</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="menu-container reveal">
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-target="entrees" data-i18n="tab_entrees">Entrées & Salades</button>
+        <button class="menu-tab" data-target="plats" data-i18n="tab_plats">Plats Principaux</button>
+        <button class="menu-tab" data-target="desserts" data-i18n="tab_desserts">Desserts</button>
+      </div>
+
+      <!-- Entrées -->
+      <div class="menu-category active" id="entrees">
+        <h3 class="menu-category-title" data-i18n="cat_entrees">Entrées</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_foiegras_name">Foie gras de canard maison</h4>
+            <p class="menu-item-desc" data-i18n="dish_foiegras_desc">Fleur de sel et songe de figue</p>
+          </div>
+          <div class="menu-item-price">195 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_burrata_name">Burrata de la maison</h4>
+            <p class="menu-item-desc" data-i18n="dish_burrata_desc">Sur carpaccio de tomate</p>
+          </div>
+          <div class="menu-item-price">145 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_saumon_name">Gravlax de saumon</h4>
+            <p class="menu-item-desc" data-i18n="dish_saumon_desc">Façon filet de hareng, pommes à l'huile</p>
+          </div>
+          <div class="menu-item-price">125 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_terrine_name">Terrine de campagne maison</h4>
+            <p class="menu-item-desc" data-i18n="dish_terrine_desc">Pickles de légumes maison</p>
+          </div>
+          <div class="menu-item-price">115 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_escargot_name">Escargot de Bourgogne</h4>
+            <p class="menu-item-desc" data-i18n="dish_escargot_desc">(6 pièces)</p>
+          </div>
+          <div class="menu-item-price">85 DH</div>
+        </div>
+
+        <h3 class="menu-category-title" data-i18n="cat_salads">Grandes Salades & Carpaccio</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_bistrot_name">Salade bistrot de la mer</h4>
+          </div>
+          <div class="menu-item-price">155 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_chevre_name">Salade de chèvre au miel</h4>
+          </div>
+          <div class="menu-item-price">125 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_carpaccio_name">Carpaccio de bœuf</h4>
+            <p class="menu-item-desc" data-i18n="dish_carpaccio_desc">Frites et salade</p>
+          </div>
+          <div class="menu-item-price">175 DH</div>
+        </div>
+      </div>
+
+      <!-- Plats -->
+      <div class="menu-category" id="plats">
+        <h3 class="menu-category-title" data-i18n="cat_meats">Viandes</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_cote_name">La reine de la viande côte de bœuf à la moelle</h4>
+            <p class="menu-item-desc" data-i18n="dish_cote_desc">(600g)</p>
+          </div>
+          <div class="menu-item-price">380 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_agneau_name">Souris d'agneau</h4>
+            <p class="menu-item-desc" data-i18n="dish_agneau_desc">Aux épices des mille et une nuits</p>
+          </div>
+          <div class="menu-item-price">280 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_roi_name">Le roi de la viande filet de bœuf</h4>
+            <p class="menu-item-desc" data-i18n="dish_roi_desc">À la saveur de poivre</p>
+          </div>
+          <div class="menu-item-price">220 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_entrecote_name">Entrecôte béarnaise</h4>
+            <p class="menu-item-desc" data-i18n="dish_entrecote_desc">Un mariage de saveurs</p>
+          </div>
+          <div class="menu-item-price">220 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_cordon_name">Cordon bleu</h4>
+            <p class="menu-item-desc" data-i18n="dish_cordon_desc">Frites et salade</p>
+          </div>
+          <div class="menu-item-price">185 DH</div>
+        </div>
+
+        <h3 class="menu-category-title" data-i18n="cat_fish">Poissons & Spécialités</h3>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_sole_name">Sole a la meunière</h4>
+            <p class="menu-item-desc" data-i18n="dish_sole_desc">Un écrin de saveurs et de fraîcheur (600g)</p>
+          </div>
+          <div class="menu-item-price">280 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_bar_name">Bar de la nuit</h4>
+            <p class="menu-item-desc" data-i18n="dish_bar_desc">Sur un lit de crémeux de chou-fleur</p>
+          </div>
+          <div class="menu-item-price">240 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_saumonatlas_name">Saumon de l'Atlas unilatéral</h4>
+          </div>
+          <div class="menu-item-price">235 DH</div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-category" id="desserts">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_pavlova_name">Pavlova</h4>
+          </div>
+          <div class="menu-item-price">120 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_tarte_name">Tarte fine aux pommes</h4>
+            <p class="menu-item-desc" data-i18n="dish_tarte_desc">Et sa boule de glace</p>
+          </div>
+          <div class="menu-item-price">95 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_profiteroles_name">Profiteroles au chocolat</h4>
+          </div>
+          <div class="menu-item-price">95 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_cafe_name">Café gourmand</h4>
+          </div>
+          <div class="menu-item-price">90 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_moelleux_name">Moelleux au chocolat</h4>
+          </div>
+          <div class="menu-item-price">85 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_pain_name">Pain perdu</h4>
+            <p class="menu-item-desc" data-i18n="dish_pain_desc">Et sa boule de vanille</p>
+          </div>
+          <div class="menu-item-price">75 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_ile_name">Île flottante</h4>
+          </div>
+          <div class="menu-item-price">65 DH</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4 class="menu-item-name" data-i18n="dish_riz_name">Riz au lait façon grand-mère</h4>
+            <p class="menu-item-desc" data-i18n="dish_riz_desc">(5p)</p>
+          </div>
+          <div class="menu-item-price">65 DH</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="section-header reveal">
+      <span class="section-label" data-i18n="gal_label">En images</span>
+      <h2 class="section-title" data-i18n="gal_title">Notre Galerie</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <img src="image copy 10.png" alt="Monsieur Moutarde - 1" class="gallery-img" loading="lazy">
+      <img src="image copy 11.png" alt="Monsieur Moutarde - 2" class="gallery-img" loading="lazy">
+      <img src="image copy 2.png" alt="Monsieur Moutarde - 3" class="gallery-img" loading="lazy">
+      <img src="image copy 3.png" alt="Monsieur Moutarde - 4" class="gallery-img" loading="lazy">
+      <img src="image copy 4.png" alt="Monsieur Moutarde - 5" class="gallery-img" loading="lazy">
+      <img src="image copy 5.png" alt="Monsieur Moutarde - 6" class="gallery-img" loading="lazy">
+      <img src="image copy 6.png" alt="Monsieur Moutarde - 7" class="gallery-img" loading="lazy">
+      <img src="image copy 7.png" alt="Monsieur Moutarde - 8" class="gallery-img" loading="lazy">
+      <img src="image copy 8.png" alt="Monsieur Moutarde - 9" class="gallery-img" loading="lazy">
+      <img src="image copy 9.png" alt="Monsieur Moutarde - 10" class="gallery-img" loading="lazy">
+       <img src="image copy 12.png" alt="Monsieur Moutarde - 3" class="gallery-img" loading="lazy">
+      <img src="image copy 13.png" alt="Monsieur Moutarde - 4" class="gallery-img" loading="lazy">
+      <img src="image copy 14.png" alt="Monsieur Moutarde - 5" class="gallery-img" loading="lazy">
+      <img src="image copy 15.png" alt="Monsieur Moutarde - 6" class="gallery-img" loading="lazy">
+      <img src="image copy 16.png" alt="Monsieur Moutarde - 7" class="gallery-img" loading="lazy">
+      <img src="image copy 17.png" alt="Monsieur Moutarde - 8" class="gallery-img" loading="lazy">
+      <img src="image copy 18.png" alt="Monsieur Moutarde - 9" class="gallery-img" loading="lazy">
+      <img src="image copy 19.png" alt="Monsieur Moutarde - 10" class="gallery-img" loading="lazy">
+      <img src="image.png" alt="Monsieur Moutarde - 9" class="gallery-img" loading="lazy">
+      <img src="image copy.png" alt="Monsieur Moutarde - 10" class="gallery-img" loading="lazy">
+    </div>
+  </section>
+
+  <!-- WhatsApp Reservation -->
+  <section id="reservation" class="section section-cream">
+    <div class="reservation-container reveal">
+      <div class="reservation-content">
+        <span class="section-label" data-i18n="res_label">Réservez votre table</span>
+        <h2 class="section-title" data-i18n="res_title" style="margin-bottom:1rem;color:var(--text-dark)">Réservation par WhatsApp</h2>
+        <p data-i18n="res_desc">Réservez rapidement votre table en nous envoyant un message. Indiquez la date, l'heure et le nombre de personnes, nous vous confirmerons dans les plus brefs délais.</p>
+        
+        <form class="wtsp-form" id="wtsp-form">
+          <div class="form-group">
+            <input type="text" id="res-name" data-i18n="res_name_ph" placeholder="Votre Nom complet" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="date" id="res-date" required>
+            </div>
+            <div class="form-group">
+              <input type="time" id="res-time" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <select id="res-people" required>
+              <option value="" disabled selected data-i18n="res_people_ph">Nombre de personnes</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7+">7+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary wtsp-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span data-i18n="res_btn">Réserver par WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="section section-cream">
+    <div class="reviews-container reveal">
+      <div class="section-header">
+        <span class="section-label" data-i18n="rev_label">Ce qu'ils disent de nous</span>
+        <h2 class="section-title" data-i18n="rev_title">Avis Google</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="reviews-header-info">
+        <div class="rating-big">4.9/5</div>
+        <div>
+          <div class="rating-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="rating-text" data-i18n="rev_based">Basé sur 44 avis</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">J</div>
+            <div>
+              <div class="review-name">j-M Flam</div>
+              <div class="review-date" data-i18n="rev_1_date">il y a 2 mois</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text" data-i18n="rev_1_text">"Un accueil très chaleureux, un service et des conseils excellents et pour finir, une carte au top. Nous etions trois pour le dîner et tous le monde à été sublimé par la qualité des plats. La souris d'agneau.... hummmmmmmm. Mille merci et à bientôt."</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">A</div>
+            <div>
+              <div class="review-name">Alexandra DORIZON</div>
+              <div class="review-date" data-i18n="rev_2_date">il y a 2 mois</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text" data-i18n="rev_2_text">"Un excellent restaurant français. C'est très bon et le service est parfait. Les desserts délicieux !! Je recommande"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">I</div>
+            <div>
+              <div class="review-name">Ismail Lahlou</div>
+              <div class="review-date" data-i18n="rev_3_date">il y a 3 mois</div>
+            </div>
+          </div>
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text" data-i18n="rev_3_text">"Super expérience conviviale. Je recommande la tarte aux pommes et le cordon bleu 🙌🏼"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="insta-section">
+    <div class="reveal">
+      <h2 class="insta-handle"><a href="https://instagram.com/mrmoutarde.casablanca" target="_blank">@mrmoutarde.casablanca</a></h2>
+      <p class="insta-followers" data-i18n="insta_follow">Rejoignez nos +3300 followers</p>
+      <a href="https://instagram.com/mrmoutarde.casablanca" target="_blank" class="insta-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.181a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        <span data-i18n="insta_btn">Suivez-nous sur Instagram</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section id="contact" class="section section-dark">
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <span class="section-label" data-i18n="contact_label">Informations</span>
+        <h3 data-i18n="contact_title">Nous Trouver & Réserver</h3>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label" data-i18n="contact_phone">Téléphone</div>
+            <div class="contact-value"><a href="tel:+212701788788">07 01 78 87 88</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label" data-i18n="contact_address">Adresse</div>
+            <div class="contact-value">38 Rue Badr Assayab<br>Gauthier, Casablanca 20000</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="hours-table">
+            <div class="contact-label" data-i18n="contact_hours">Horaires d'ouverture</div>
+            <table>
+              <tr><td data-i18n="day_mon">Lundi</td><td>11:00 - 01:00</td></tr>
+              <tr><td data-i18n="day_tue">Mardi</td><td>11:00 - 01:00</td></tr>
+              <tr><td data-i18n="day_wed">Mercredi</td><td>11:00 - 01:00</td></tr>
+              <tr><td data-i18n="day_thu">Jeudi</td><td>11:00 - 01:00</td></tr>
+              <tr><td data-i18n="day_fri">Vendredi</td><td>10:30 - 01:00</td></tr>
+              <tr><td data-i18n="day_sat">Samedi</td><td>11:00 - 01:00</td></tr>
+              <tr><td data-i18n="day_sun">Dimanche</td><td>11:00 - 01:00</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.708170068307!2d-7.636605023906232!3d33.586915242127815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d2b638a5b28d%3A0x86cd87413c6f9660!2s38%20Rue%20Badr%20Assayab%2C%20Casablanca%2020250!5e0!3m2!1sfr!2sma!4v1714418645012!5m2!1sfr!2sma" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Monsieur Moutarde. Tous droits réservés.</p>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/212701788788" class="whatsapp-float" target="_blank" aria-label="Réserver sur WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="translations.js"></script>
+  <script>
+    // Preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').classList.add('hidden');
+      setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+      }, 600);
+    });
+
+    // Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Current Day Highlight in Hours Table
+    const today = new Date().getDay();
+    const rows = document.querySelectorAll('.hours-table tr');
+    const tableIndex = today === 0 ? 6 : today - 1;
+    if(rows[tableIndex]) rows[tableIndex].classList.add('today');
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Language Dropdown & Logic
+    const langBtn = document.getElementById('lang-btn');
+    const langMenu = document.getElementById('lang-menu');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle('open');
+    });
+
+    window.addEventListener('click', () => {
+      if(langMenu.classList.contains('open')) {
+        langMenu.classList.remove('open');
+      }
+    });
+
+    langOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        langOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+        
+        const selectedLang = option.getAttribute('data-lang');
+        changeLanguage(selectedLang);
+      });
+    });
+
+    // Menu Tabs
+    const tabs = document.querySelectorAll('.menu-tab');
+    const categories = document.querySelectorAll('.menu-category');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        categories.forEach(c => c.classList.remove('active'));
+        
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Scroll Reveal Animation
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100;
+      
+      reveals.forEach(reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if(elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('visible');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // trigger on load
+    
+    // WhatsApp Reservation Form
+    document.getElementById('wtsp-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('res-name').value;
+      const date = document.getElementById('res-date').value;
+      const time = document.getElementById('res-time').value;
+      const people = document.getElementById('res-people').value;
+      
+      const currentLang = document.documentElement.lang || 'fr';
+      let greeting = "Bonjour Monsieur Moutarde,%0AJe souhaite réserver une table.";
+      if (currentLang === 'en') greeting = "Hello Monsieur Moutarde,%0AI would like to book a table.";
+      if (currentLang === 'ar') greeting = "مرحباً مسيو موتارد،%0Aأود حجز طاولة.";
+
+      const text = `${greeting}%0A%0A*Nom :* ${name}%0A*Date :* ${date}%0A*Heure :* ${time}%0A*Personnes :* ${people}%0A%0AMerci !`;
+      window.open(`https://wa.me/212701788788?text=${text}`, '_blank');
+    });
+  </script>
+</body>
+</html>

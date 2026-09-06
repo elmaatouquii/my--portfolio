@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed El Maatouqui - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar new-navbar">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="nav-container">
+            <div class="nav-logo-box">
+                <span class="logo-m">M</span><span class="logo-e">E</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <a href="#contact" class="nav-btn">LET'S BUILD TOGETHER</a>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <a href="#contact" class="nav-btn mobile-nav-btn">LET'S BUILD TOGETHER</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero new-hero">
+        <div class="hero-grid">
+            
+            <div class="hero-left reveal reveal-left">
+                <div class="greeting"><span class="line"></span>HELLO, I AM</div>
+                <h1 class="hero-name">
+                    <span class="name-first">MOHAMED</span>
+                    <span class="name-last">EL MAATOUQUI</span>
+                </h1>
+                <p class="hero-role">Software Developer & Problem Solver</p>
+                <div class="hero-desc">
+                    I transform your business needs into reliable, secure, and performant web solutions, creating intuitive digital experiences.
+                </div>
+                <div class="hero-actions">
+                    <a href="CV-Mohamed-El-Maatouqui.pdf" download="CV-Mohamed-El-Maatouqui.pdf" class="btn-download"><i class="fas fa-download"></i> Download CV</a>
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/mohamed-elmaatouqui-64957832b" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/elmaatouquii" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/elm_115/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="tel:+212705912597"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-center reveal reveal-up delay-200">
+                <img src="me.jpg" alt="Mohamed El Maatouqui" class="hero-portrait">
+            </div>
+
+            <div class="hero-right reveal reveal-right delay-400">
+                <div class="quote-block">
+                    <h2>Good design is<br>noticeable. Great<br>design is memorable.</h2>
+                    <p>I transform ideas into clear, useful, and truly human digital experiences.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">About Me</h2>
+            <p class="about-text reveal reveal-up delay-100">I am a junior web developer passionate about creating modern user experiences. I have mastered the basics of HTML, CSS, JavaScript, PHP, and MySQL, as well as the Laravel and React frameworks. I work every day to improve my skills and deepen my mastery of front-end and back-end development. My goal is to provide efficient, clean, and professional web solutions.</p>
+            <h3 class="education-title reveal reveal-scale delay-200">Academic Background</h3>
+            <div class="education-timeline">
+                <div class="education-item reveal reveal-left delay-300">
+                    <h4>Specialized Technician Diploma in Software Development – ISTA Ouarzazate</h4>
+                    <p>In-depth training in software development, focused on web technologies (HTML/CSS, JS, PHP) and modern frameworks (React, Laravel).</p>
+                </div>
+                <div class="education-item reveal reveal-left delay-400">
+                    <h4> 2021-2022:  High School Diploma in Physical Sciences (PC)</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">Skills & Tools</h2>
+            
+            <div class="skills-dashboard">
+                <!-- Frontend Card -->
+                <div class="skills-card reveal reveal-up delay-100">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                        <div>
+                            <h3>Frontend</h3>
+                            <p>Interface & User Experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-html5" style="color: #E34F26;"></i> <span>HTML5 / CSS3</span>
+                            <span class="pct">95%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-js-square" style="color: #F7DF1E;"></i> <span>JavaScript</span>
+                            <span class="pct">85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-react" style="color: #61DBFB;"></i> <span>React.js</span>
+                            <span class="pct">80%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-bootstrap" style="color: #7952B3;"></i> <span>Bootstrap</span>
+                            <span class="pct">85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="skills-card reveal reveal-up delay-200">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-server"></i></div>
+                        <div>
+                            <h3>Backend</h3>
+                            <p>Server & Database</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-php" style="color: #777BB4;"></i> <span>PHP</span>
+                            <span class="pct">85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-laravel" style="color: #f05340;"></i> <span>Laravel</span>
+                            <span class="pct">90%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fas fa-database" style="color: #00758F;"></i> <span>MySQL</span>
+                            <span class="pct">85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fas fa-cogs" style="color: #4CAF50;"></i> <span>OOP (PHP)</span>
+                            <span class="pct">85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Outils & Langues Card -->
+                <div class="skills-card reveal reveal-up delay-300">
+                    <div class="card-header">
+                        <div class="icon-box"><i class="fas fa-tools"></i></div>
+                        <div>
+                            <h3>Tools & Languages</h3>
+                            <p>Development & Communication</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fab fa-git-alt" style="color: #F1502F;"></i> <span>Git / GitHub</span>
+                        </div>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fas fa-language" style="color: #ff5e14;"></i> <span>Arabic (Native)</span>
+                        </div>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fas fa-language" style="color: #ff5e14;"></i> <span>French (Intermediate)</span>
+                        </div>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <i class="fas fa-language" style="color: #ff5e14;"></i> <span>English (Intermediate)</span>
+                        </div>
+                        <div class="dots-indicator">
+                            <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="why-me" class="why-me reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">Why Work With Me</h2>
+            <div class="why-me-grid">
+                <div class="why-me-card reveal reveal-up delay-100">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h4>Clean Code</h4>
+                    <p>Well-structured, readable, and maintainable code following best practices.</p>
+                </div>
+                <div class="why-me-card reveal reveal-up delay-200">
+                    <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Responsive Design</h4>
+                    <p>Interfaces that adapt perfectly to every screen, from mobile to desktop.</p>
+                </div>
+                <div class="why-me-card reveal reveal-up delay-300">
+                    <div class="icon-box"><i class="fas fa-rocket"></i></div>
+                    <h4>Modern Technologies</h4>
+                    <p>Up-to-date tools and frameworks for fast, reliable, scalable solutions.</p>
+                </div>
+                <div class="why-me-card reveal reveal-up delay-400">
+                    <div class="icon-box"><i class="fas fa-handshake"></i></div>
+                    <h4>Client-focused Solutions</h4>
+                    <p>Every project is tailored to your goals, with clear communication throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item reveal reveal-left delay-100">
+                    <div class="experience-header">
+                        <h4>Full-Stack Developer Intern</h4>
+                        <span class="experience-period">2025 – 2026</span>
+                    </div>
+                    <p class="experience-company">ORMVAO</p>
+                    <ul class="experience-list">
+                        <li>Developed a web application for agricultural cooperatives.</li>
+                        <li>Built the frontend with React.js.</li>
+                        <li>Developed the backend/API with Laravel and MySQL.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">Projects</h2>
+        <div class="projects-grid">
+
+    <div class="project-card reveal reveal-up delay-100">
+        <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&w=600&q=80" alt="AL MIZAN" class="project-thumbnail">
+        <h3>AL MIZAN - Topographic Surveyor</h3>
+        <p>A professional website for a topographic surveyor firm, highlighting precision, expertise, and mapping services. Technologies: HTML, CSS, JavaScript.</p>
+        <a href="Géomètre-topographe/index.html" class="btn btn-primary">View Project</a>
+    </div>
+
+    <div class="project-card reveal reveal-up delay-200">
+        <img src="rest/image.png" alt="Monsieur Moutarde" class="project-thumbnail">
+        <h3>Monsieur Moutarde</h3>
+        <p>A premium restaurant website featuring a multilingual interface, elegant menu display, and seamless reservation system.</p>
+        <a href="rest/index.html" class="btn btn-primary">View Project</a>
+    </div>
+
+    <div class="project-card reveal reveal-up delay-300">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80" alt="Solaris Énergie" class="project-thumbnail">
+        <h3>Solaris Énergie</h3>
+        <p>A modern corporate website for a solar energy company, showcasing services, projects, and sustainable energy solutions.</p>
+        <a href="ta9a/index.html" class="btn btn-primary">View Project</a>
+    </div>
+
+    <div class="project-card reveal reveal-up delay-400">
+        <img src="image.png" alt="AgriMarket Cooperative" class="project-thumbnail">
+        <h3>AgriMarket - Cooperative Management</h3>
+        <p>A complete web application for managing agricultural or artisanal cooperatives. Features include managing multiple cooperatives, members, and local products. Technologies: Laravel, React.</p>
+    </div>
+</div>
+
+        </div>
+    </section>
+    <section id="contact" class="contact reveal reveal-up">
+        <div class="container">
+            <h2 class="section-title reveal reveal-scale">Contact Me</h2>
+            
+            <div class="contact-card reveal reveal-up delay-100">
+                <div class="contact-info">
+                    <h3>Let's discuss your project</h3>
+                    <p>Feel free to contact me for any opportunity or collaboration. I will get back to you as soon as possible.</p>
+                    <div class="social-links-new">
+                        <a href="tel:+212705912597" title="Phone"><i class="fas fa-phone"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamed-elmaatouqui-64957832b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/elm_115/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/elmaatouquii" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Send on WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer reveal reveal-up">
+        <div class="container">
+            <div class="footer-logo"><span class="logo-m">M</span><span class="logo-e">E</span></div>
+            <p class="footer-tagline">Junior Full-Stack Web Developer</p>
+            <p class="footer-copy">&copy; 2026 Mohamed El Maatouqui. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-rocket"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL MIZAN — Géomètre-Topographe | Précision & Expertise Technique au Maroc</title>
+<meta name="description" content="Cabinet de Géomètre-Topographe au Maroc : relevés topographiques, bornage, implantation, cartographie SIG et accompagnement de chantier. Précision, expertise, fiabilité.">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230A1626'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23B08D57' stroke-width='3'/%3E%3Cpath d='M50 20 L74 66 L26 66 Z' fill='none' stroke='%23B08D57' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23B08D57'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   TOKENS
+   ============================================ */
+:root{
+  --navy-950:#080f1c;
+  --navy-900:#0c1728;
+  --navy-800:#122036;
+  --navy-700:#1a2d47;
+  --navy-line:rgba(184,163,122,0.16);
+  --white:#ffffff;
+  --off-white:#f6f7f9;
+  --paper:#fbfbfa;
+  --gray-100:#eef0f3;
+  --gray-300:#c9cfd8;
+  --gray-500:#7b8494;
+  --gray-700:#4a5261;
+  --ink:#0c1727;
+  --bronze:#b08d57;
+  --bronze-light:#d4b483;
+  --bronze-dim:#8a6f45;
+  --cyan:#5fd8cf;
+  --font-display:'Space Grotesk', sans-serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --container:1240px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;color:var(--navy-950);}
+.container{max-width:var(--container);margin:0 auto;padding:0 32px;}
+@media(max-width:768px){.container{padding:0 20px;}}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--bronze-dim);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+  font-weight:500;
+}
+.eyebrow::before{
+  content:"";
+  width:26px;height:1px;
+  background:var(--bronze);
+  display:inline-block;
+}
+.eyebrow.on-dark{color:var(--bronze-light);}
+
+.section-title{
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.12;
+  margin-bottom:20px;
+  max-width:720px;
+}
+.section-sub{
+  color:var(--gray-700);
+  font-size:17px;
+  max-width:600px;
+  margin-bottom:8px;
+}
+.section-head{margin-bottom:56px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head.center .section-title{margin-left:auto;margin-right:auto;}
+.section-head.center .section-sub{margin-left:auto;margin-right:auto;}
+.section-head.center .eyebrow{justify-content:center;}
+
+section{padding:120px 0;position:relative;}
+@media(max-width:900px){section{padding:80px 0;}}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 30px;
+  font-family:var(--font-mono);
+  font-size:13px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:500;
+  border-radius:2px;
+  transition:all .4s var(--ease);
+  white-space:nowrap;
+  position:relative;
+  overflow:hidden;
+}
+.btn-primary{
+  background:var(--bronze);
+  color:var(--navy-950);
+}
+.btn-primary:hover{background:var(--bronze-light);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(176,141,87,0.5);}
+.btn-outline{
+  background:transparent;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,0.35);
+}
+.btn-outline:hover{border-color:var(--bronze);color:var(--bronze-light);transform:translateY(-2px);}
+.btn-outline.on-light{color:var(--navy-950);border-color:rgba(12,23,39,0.25);}
+.btn-outline.on-light:hover{border-color:var(--bronze);color:var(--bronze-dim);}
+.btn-ghost{
+  color:var(--navy-950);
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-bottom:1px solid var(--navy-950);
+  padding-bottom:3px;
+  transition:all .3s var(--ease);
+}
+.btn-ghost:hover{color:var(--bronze-dim);border-color:var(--bronze);gap:12px;}
+.btn-ghost svg{transition:transform .3s var(--ease);}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96);transition:opacity 1s var(--ease), transform 1s var(--ease);}
+.reveal-scale.is-visible{opacity:1;transform:scale(1);}
+.stagger .reveal:nth-child(1){transition-delay:.05s;}
+.stagger .reveal:nth-child(2){transition-delay:.15s;}
+.stagger .reveal:nth-child(3){transition-delay:.25s;}
+.stagger .reveal:nth-child(4){transition-delay:.35s;}
+.stagger .reveal:nth-child(5){transition-delay:.45s;}
+.stagger .reveal:nth-child(6){transition-delay:.55s;}
+
+/* Geodetic mark (signature symbol) */
+.geo-mark{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+.geo-mark svg{display:block;}
+
+/* Topographic contour background */
+.contour-bg{
+  position:absolute;inset:0;
+  pointer-events:none;
+  opacity:0.5;
+  overflow:hidden;
+}
+.contour-bg svg{width:100%;height:100%;}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header{
+  position:fixed;top:0;left:0;right:0;
+  z-index:1000;
+  padding:22px 0;
+  transition:all .45s var(--ease);
+}
+header .container{display:flex;align-items:center;justify-content:space-between;}
+header.scrolled{
+  padding:14px 0;
+  background:rgba(8,15,28,0.88);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--navy-line);
+}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-text{font-family:var(--font-display);font-size:19px;font-weight:700;letter-spacing:0.02em;color:var(--white);line-height:1.1;}
+.logo-text span{display:block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.18em;color:var(--bronze-light);font-weight:400;margin-top:3px;text-transform:uppercase;}
+
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-links a{
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:0.05em;
+  color:rgba(255,255,255,0.78);
+  text-transform:uppercase;
+  position:relative;
+  padding:4px 0;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--bronze);
+  transition:width .3s var(--ease);
+}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{width:100%;}
+
+.header-actions{display:flex;align-items:center;gap:16px;}
+.phone-btn{
+  display:flex;align-items:center;gap:8px;
+  color:var(--white);
+  font-family:var(--font-mono);
+  font-size:13px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:2px;
+  transition:all .3s var(--ease);
+}
+.phone-btn:hover{border-color:var(--bronze);color:var(--bronze-light);}
+.hamburger{display:none;flex-direction:column;gap:5px;width:26px;z-index:1100;}
+.hamburger span{height:2px;background:var(--white);width:100%;transition:all .3s var(--ease);}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-menu{
+  position:fixed;inset:0;
+  background:var(--navy-950);
+  z-index:999;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:110px 40px 40px;
+  overflow-y:auto;
+  transform:translateY(-100%);
+  transition:transform .5s var(--ease);
+}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{
+  font-family:var(--font-display);
+  font-size:32px;
+  color:var(--white);
+  padding:14px 0;
+  border-bottom:1px solid var(--navy-line);
+}
+.mobile-menu .btn{margin-top:30px;width:fit-content;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .header-actions .phone-btn span{display:none;}
+  .header-actions > .btn{display:none;}
+  .hamburger{display:flex;}
+}
+
+@media(max-width:600px){
+  header{padding:16px 0;}
+  header.scrolled{padding:12px 0;}
+  .logo{gap:8px;}
+  .logo-text{font-size:16px;}
+  .logo-text span{font-size:8px;}
+  .phone-btn{padding:8px 10px;}
+  .mobile-menu{padding:96px 24px 28px;}
+  .mobile-menu a{font-size:26px;padding:11px 0;}
+  .mobile-menu .btn{width:100%;font-size:12px;}
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background:var(--navy-950);
+  overflow:hidden;
+  padding-top:110px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  z-index:0;
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;
+  opacity:0.42;
+  filter:saturate(0.85) contrast(1.05);
+}
+.hero-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(8,15,28,0.75) 0%, rgba(8,15,28,0.55) 40%, rgba(8,15,28,0.96) 100%),
+    linear-gradient(90deg, rgba(8,15,28,0.96) 0%, rgba(8,15,28,0.35) 55%, rgba(8,15,28,0.75) 100%);
+}
+.hero-grid-overlay{
+  position:absolute;inset:0;z-index:1;
+  opacity:0.35;
+  background-image:
+    linear-gradient(rgba(184,163,122,0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,163,122,0.09) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(180deg, black, transparent 85%);
+}
+.hero-content{position:relative;z-index:2;max-width:680px;}
+.hero-coord{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--bronze-light);
+  letter-spacing:0.08em;
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  opacity:0.9;
+}
+.hero-coord .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+.hero h1{
+  font-size:clamp(38px, 5.4vw, 68px);
+  color:var(--white);
+  line-height:1.08;
+  letter-spacing:-0.015em;
+  margin-bottom:26px;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--bronze-light);
+}
+.hero p.lead{
+  font-size:18px;
+  color:rgba(255,255,255,0.72);
+  max-width:540px;
+  margin-bottom:40px;
+  font-weight:300;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+.trust-line{
+  display:flex;align-items:center;gap:18px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+}
+.trust-line .sep{width:4px;height:4px;background:var(--bronze);border-radius:50%;}
+
+.hero-corner-frame{
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+}
+.hero-scroll{
+  position:absolute;bottom:36px;left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  color:rgba(255,255,255,0.5);
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+}
+.scroll-line{width:1px;height:38px;background:linear-gradient(180deg, var(--bronze), transparent);animation:scrollMove 1.8s infinite;}
+@keyframes scrollMove{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+@media(max-width:900px){
+  .hero{padding-top:120px;min-height:92vh;}
+  .hero-actions .btn{width:100%;}
+  .hero-actions{flex-direction:column;}
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats-section{
+  background:var(--navy-950);
+  padding:0;
+  position:relative;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--navy-line);
+}
+.stat-item{
+  padding:56px 32px;
+  text-align:left;
+  border-right:1px solid var(--navy-line);
+  position:relative;
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:clamp(34px,4vw,52px);
+  color:var(--white);
+  font-weight:600;
+  display:flex;
+  align-items:baseline;
+  gap:2px;
+}
+.stat-num .accent{color:var(--bronze-light);}
+.stat-label{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+  margin-top:10px;
+}
+@media(max-width:768px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat-item{padding:36px 20px;border-bottom:1px solid var(--navy-line);}
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about{background:var(--paper);}
+.about-grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+.about-media{position:relative;}
+.about-media img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  border-radius:2px;
+}
+.about-badge{
+  position:absolute;
+  bottom:-28px;left:-28px;
+  background:var(--navy-950);
+  color:var(--white);
+  padding:26px 30px;
+  max-width:230px;
+  border-left:2px solid var(--bronze);
+}
+.about-badge .num{font-family:var(--font-display);font-size:30px;color:var(--bronze-light);margin-bottom:4px;}
+.about-badge .txt{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.05em;color:rgba(255,255,255,0.7);line-height:1.5;}
+.about-list{margin-top:32px;display:flex;flex-direction:column;gap:18px;}
+.about-list-item{display:flex;gap:14px;align-items:flex-start;}
+.about-list-item .geo-mark{margin-top:3px;}
+.about-list-item p{color:var(--gray-700);font-size:15.5px;}
+.about-list-item strong{display:block;color:var(--navy-950);font-family:var(--font-display);font-size:16px;margin-bottom:2px;font-weight:600;}
+
+.info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-100);margin-top:48px;border:1px solid var(--gray-100);}
+.info-card{background:var(--paper);padding:28px 22px;}
+.info-card .geo-mark{margin-bottom:14px;}
+.info-card h4{font-size:15.5px;margin-bottom:6px;}
+.info-card p{font-size:13.5px;color:var(--gray-500);}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:56px;}
+  .about-media img{height:400px;}
+  .info-cards{grid-template-columns:1fr;}
+  .about-badge{left:0;bottom:-20px;padding:20px 22px;}
+}
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services{background:var(--off-white);}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:var(--gray-300);
+  border:1px solid var(--gray-300);
+}
+.service-card{
+  background:var(--paper);
+  padding:0;
+  display:flex;flex-direction:column;
+  transition:background .4s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.service-media{
+  height:230px;
+  position:relative;
+  overflow:hidden;
+}
+.service-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--ease), filter .5s;
+  filter:grayscale(0.15);
+}
+.service-card:hover .service-media img{transform:scale(1.08);filter:grayscale(0);}
+.service-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(8,15,28,0) 40%, rgba(8,15,28,0.75) 100%);
+}
+.service-num{
+  position:absolute;top:16px;left:18px;z-index:2;
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--bronze-light);
+  letter-spacing:0.1em;
+}
+.service-body{padding:30px 30px 34px;flex:1;display:flex;flex-direction:column;}
+.service-body h3{font-size:20px;margin-bottom:12px;}
+.service-body p{color:var(--gray-700);font-size:14.5px;margin-bottom:22px;flex:1;}
+.service-link{
+  font-family:var(--font-mono);
+  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--navy-950);
+  width:fit-content;
+  padding-bottom:4px;
+  border-bottom:1px solid var(--gray-300);
+  transition:all .3s var(--ease);
+}
+.service-card:hover .service-link{color:var(--bronze-dim);border-color:var(--bronze);gap:12px;}
+@media(max-width:900px){.services-grid{grid-template-columns:1fr;}}
+@media(min-width:901px) and (max-width:1200px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================
+   EQUIPMENT
+   ============================================ */
+.equipment{
+  background:var(--navy-950);
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+.equipment .section-sub{color:rgba(255,255,255,0.6);}
+.equip-scroller{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--navy-line);
+  border:1px solid var(--navy-line);
+  position:relative;
+  z-index:2;
+}
+.equip-card{
+  background:var(--navy-950);
+  padding:28px 22px 30px;
+  transition:background .4s var(--ease);
+}
+.equip-card:hover{background:var(--navy-800);}
+.equip-media{
+  height:150px;
+  overflow:hidden;
+  margin-bottom:20px;
+  position:relative;
+  border:1px solid var(--navy-line);
+}
+.equip-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);filter:grayscale(0.3) brightness(0.95);}
+.equip-card:hover .equip-media img{transform:scale(1.08);filter:grayscale(0) brightness(1.05);}
+.equip-tag{
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:var(--cyan);
+  letter-spacing:0.1em;
+  position:absolute;top:8px;left:8px;
+  background:rgba(8,15,28,0.7);
+  padding:3px 7px;
+}
+.equip-card h4{color:var(--white);font-size:16px;margin-bottom:8px;}
+.equip-card p{color:rgba(255,255,255,0.55);font-size:13px;}
+@media(max-width:1100px){.equip-scroller{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.equip-scroller{grid-template-columns:repeat(2,1fr);}}
+
+/* HUD decorative coordinates */
+.hud-coord{
+  position:absolute;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:rgba(184,163,122,0.4);
+  letter-spacing:0.08em;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* ============================================
+   PROJECTS GALLERY
+   ============================================ */
+.projects{background:var(--paper);}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.project-card{
+  position:relative;
+  height:340px;
+  overflow:hidden;
+  cursor:pointer;
+  border-radius:2px;
+}
+.project-card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s var(--ease), filter .6s;
+  filter:grayscale(0.4) brightness(0.85);
+}
+.project-card:hover img{transform:scale(1.1);filter:grayscale(0) brightness(0.9);}
+.project-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(8,15,28,0.05) 30%, rgba(8,15,28,0.92) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;
+  transition:all .4s var(--ease);
+}
+.project-type{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--bronze-light);
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .4s var(--ease) .05s;
+}
+.project-card:hover .project-type{opacity:1;transform:translateY(0);}
+.project-name{
+  font-family:var(--font-display);
+  font-size:22px;
+  color:var(--white);
+  margin-bottom:6px;
+}
+.project-loc{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:rgba(255,255,255,0.6);
+  display:flex;align-items:center;gap:6px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .4s var(--ease) .1s;
+}
+.project-card:hover .project-loc{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.projects-grid{grid-template-columns:1fr;}.project-card{height:300px;}}
+@media(min-width:901px) and (max-width:1200px){.projects-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================
+   PROCESS TIMELINE
+   ============================================ */
+.process{background:var(--off-white);}
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+  margin-top:20px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;top:27px;left:0;right:0;
+  height:1px;
+  background:repeating-linear-gradient(90deg, var(--gray-300) 0, var(--gray-300) 8px, transparent 8px, transparent 16px);
+  z-index:0;
+}
+.tl-step{position:relative;padding-right:30px;}
+.tl-num{
+  width:56px;height:56px;
+  border:1px solid var(--navy-950);
+  background:var(--off-white);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:18px;font-weight:600;
+  position:relative;z-index:1;
+  margin-bottom:26px;
+  transition:all .4s var(--ease);
+}
+.tl-step:hover .tl-num{background:var(--navy-950);color:var(--bronze-light);border-color:var(--navy-950);transform:scale(1.06);}
+.tl-step h4{font-size:18px;margin-bottom:10px;}
+.tl-step p{color:var(--gray-700);font-size:14px;}
+@media(max-width:900px){
+  .timeline{grid-template-columns:1fr;gap:36px;}
+  .timeline::before{display:none;}
+  .tl-step{padding-right:0;padding-left:26px;border-left:1px dashed var(--gray-300);}
+  .tl-num{margin-left:-28px;}
+}
+
+/* ============================================
+   WHY US
+   ============================================ */
+.why{background:var(--navy-950);color:var(--white);position:relative;overflow:hidden;}
+.why .section-sub{color:rgba(255,255,255,0.6);}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--navy-line);
+  border-top:1px solid var(--navy-line);
+  position:relative;z-index:2;
+}
+.why-item{
+  background:var(--navy-950);
+  padding:40px 34px;
+  transition:background .4s var(--ease);
+}
+.why-item:hover{background:var(--navy-800);}
+.why-item .geo-mark{margin-bottom:22px;}
+.why-item h4{color:var(--white);font-size:18px;margin-bottom:10px;}
+.why-item p{color:rgba(255,255,255,0.55);font-size:14px;}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr;}}
+@media(min-width:901px) and (max-width:1200px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================
+   ZONE INTERVENTION
+   ============================================ */
+.zone{background:var(--paper);}
+.zone-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.city-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--gray-300);}
+.city-item{
+  padding:18px 4px;
+  border-bottom:1px solid var(--gray-300);
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--font-display);font-size:17px;
+  transition:padding-left .3s var(--ease), color .3s;
+}
+.city-item:nth-child(odd){border-right:1px solid var(--gray-300);padding-left:0;padding-right:16px;}
+.city-item:nth-child(even){padding-left:16px;}
+.city-item:hover{padding-left:22px;color:var(--bronze-dim);}
+.city-item span.code{font-family:var(--font-mono);font-size:11px;color:var(--gray-500);}
+.zone-map-visual{
+  height:460px;
+  background:var(--navy-950);
+  position:relative;
+  overflow:hidden;
+  border-radius:2px;
+}
+@media(max-width:900px){.zone-grid{grid-template-columns:1fr;gap:40px;}.zone-map-visual{height:320px;order:-1;}}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials{background:var(--off-white);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-300);border:1px solid var(--gray-300);}
+.testi-card{background:var(--paper);padding:38px 32px;}
+.testi-stars{display:flex;gap:4px;margin-bottom:22px;color:var(--bronze);}
+.testi-quote{font-family:var(--font-display);font-size:18px;line-height:1.5;color:var(--navy-950);margin-bottom:26px;font-weight:500;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--navy-950);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--bronze-light);font-family:var(--font-display);font-size:15px;font-weight:600;
+}
+.testi-name{font-size:14px;font-weight:600;}
+.testi-role{font-family:var(--font-mono);font-size:11.5px;color:var(--gray-500);}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq{background:var(--paper);}
+.faq-wrap{max-width:820px;}
+.faq-item{border-bottom:1px solid var(--gray-300);}
+.faq-q{
+  padding:26px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+  gap:20px;
+}
+.faq-q h4{font-size:17px;font-weight:500;font-family:var(--font-body);color:var(--navy-950);}
+.faq-icon{
+  width:22px;height:22px;flex-shrink:0;
+  position:relative;
+}
+.faq-icon::before,.faq-icon::after{
+  content:"";position:absolute;background:var(--navy-950);transition:all .35s var(--ease);
+}
+.faq-icon::before{width:100%;height:1px;top:50%;left:0;}
+.faq-icon::after{width:1px;height:100%;left:50%;top:0;}
+.faq-item.open .faq-icon::after{transform:scaleY(0);}
+.faq-item.open .faq-icon::before{background:var(--bronze-dim);}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s var(--ease);
+}
+.faq-a-inner{padding-bottom:26px;color:var(--gray-700);font-size:15px;max-width:680px;}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta{
+  background:var(--navy-950);
+  color:var(--white);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  padding:140px 0;
+}
+.final-cta h2{
+  color:var(--white);
+  font-size:clamp(30px,5vw,54px);
+  max-width:780px;
+  margin:0 auto 22px;
+  line-height:1.15;
+  position:relative;z-index:2;
+}
+.final-cta p{
+  color:rgba(255,255,255,0.6);
+  max-width:520px;
+  margin:0 auto 44px;
+  font-size:17px;
+  position:relative;z-index:2;
+}
+.final-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;}
+.whatsapp-inline{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:36px;
+  font-family:var(--font-mono);font-size:13px;
+  color:rgba(255,255,255,0.55);
+  position:relative;z-index:2;
+}
+.whatsapp-inline a{color:var(--bronze-light);border-bottom:1px solid var(--bronze-dim);}
+@media(max-width:600px){.final-actions{flex-direction:column;}.final-actions .btn{width:100%;}}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact{background:var(--off-white);}
+.contact-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;}
+.form-group{margin-bottom:22px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+label{
+  display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-500);margin-bottom:9px;
+}
+input,select,textarea{
+  width:100%;
+  padding:14px 4px;
+  border:none;border-bottom:1px solid var(--gray-300);
+  background:transparent;
+  font-family:var(--font-body);font-size:15px;color:var(--navy-950);
+  transition:border-color .3s;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--bronze);}
+textarea{resize:vertical;min-height:110px;}
+.form-note{font-size:12.5px;color:var(--gray-500);margin-top:18px;}
+.contact-info{background:var(--navy-950);color:var(--white);padding:44px 38px;}
+.contact-info h3{color:var(--white);font-size:20px;margin-bottom:30px;}
+.ci-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--navy-line);}
+.ci-row:last-of-type{border-bottom:none;}
+.ci-row .geo-mark{margin-top:2px;}
+.ci-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:4px;}
+.ci-val{font-size:15px;color:var(--white);}
+.map-embed{margin-top:24px;border:1px solid var(--navy-line);height:180px;overflow:hidden;}
+.map-embed iframe{width:100%;height:100%;border:0;filter:grayscale(0.4) invert(0.92) contrast(0.9);}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:50px;}.form-row{grid-template-columns:1fr;}}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{background:var(--navy-950);color:rgba(255,255,255,0.6);padding:80px 0 0;}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.1fr;
+  gap:50px;
+  padding-bottom:60px;
+  border-bottom:1px solid var(--navy-line);
+}
+.footer-logo{color:var(--white);font-family:var(--font-display);font-size:19px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.footer-desc{font-size:14px;line-height:1.7;max-width:280px;margin-bottom:20px;}
+.footer-social{display:flex;gap:12px;}
+.footer-social a{
+  width:36px;height:36px;border:1px solid var(--navy-line);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s var(--ease);
+}
+.footer-social a:hover{border-color:var(--bronze);color:var(--bronze-light);transform:translateY(-3px);}
+.footer-col h5{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze-light);margin-bottom:22px;
+}
+.footer-col a,.footer-col p{display:block;font-size:14px;margin-bottom:13px;color:rgba(255,255,255,0.6);transition:color .3s;}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{
+  padding:26px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--font-mono);font-size:12px;color:rgba(255,255,255,0.4);
+  flex-wrap:wrap;gap:10px;
+}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ============================================
+   FLOATING BUTTONS
+   ============================================ */
+.floating-buttons{
+  position:fixed;bottom:26px;right:26px;
+  z-index:900;
+  display:flex;flex-direction:column;gap:14px;
+}
+.fab{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px -8px rgba(0,0,0,0.5);
+  transition:transform .3s var(--ease);
+}
+.fab:hover{transform:scale(1.08);}
+.fab-whatsapp{background:#25D366;color:#fff;}
+.fab-call{background:var(--bronze);color:var(--navy-950);}
+@media(max-width:600px){.floating-buttons{bottom:18px;right:18px;}.fab{width:50px;height:50px;}}
+
+/* Counter for accessibility hidden text */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+/* Focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--bronze);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <a href="#accueil" class="logo">
+      <span class="geo-mark">
+        <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="#B08D57" stroke-width="1.3"/>
+          <path d="M20 8 L31 30 L9 30 Z" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+          <circle cx="20" cy="20" r="2.4" fill="#B08D57"/>
+          <path d="M20 2 V6 M20 34 V38 M2 20 H6 M34 20 H38" stroke="#B08D57" stroke-width="1"/>
+        </svg>
+      </span>
+      <span class="logo-text">AL MIZAN<span>Géomètres-Topographes</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#projets">Projets</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+212522000000" class="phone-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+212 522 00 00 00</span>
+      </a>
+      <a href="#contact" class="btn btn-primary" style="padding:12px 22px;">Demander un devis</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#accueil">Accueil</a>
+  <a href="#apropos">À propos</a>
+  <a href="#services">Services</a>
+  <a href="#projets">Projets</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Demander un devis</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="accueil">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1654643353084-10e62e05b9bf?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Géomètre-topographe utilisant une station totale sur un chantier">
+  </div>
+  <div class="hero-grid-overlay"></div>
+
+  <div class="hud-coord" style="top:130px;right:6%;" id="hudLat">33.5731° N</div>
+  <div class="hud-coord" style="top:158px;right:6%;" id="hudLng">-7.5898° W</div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-coord"><span class="dot"></span> SYSTÈME LAMBERT · PRÉCISION ± 2MM</div>
+      <h1>La précision au service de <em>vos projets</em></h1>
+      <p class="lead">Cabinet de Géomètre-Topographe spécialisé dans les relevés, le bornage, la topographie, la cartographie et l'accompagnement technique de vos projets.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Demander un devis</a>
+        <a href="#services" class="btn btn-outline">Découvrir nos services</a>
+      </div>
+      <div class="trust-line">
+        <span>Précision</span><span class="sep"></span><span>Expertise</span><span class="sep"></span><span>Fiabilité</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="10">0</span><span class="accent">+ ans</span></div>
+        <div class="stat-label">D'expérience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="accent">+</span><span class="counter" data-target="500">0</span></div>
+        <div class="stat-label">Projets réalisés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="100">0</span><span class="accent">%</span></div>
+        <div class="stat-label">De précision</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="counter" data-target="24">0</span><span class="accent">h</span></div>
+        <div class="stat-label">Pour recevoir votre devis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="apropos">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal-scale">
+        <img src="https://images.unsplash.com/photo-1628158088791-89567a8e84ec?fm=jpg&q=80&w=1400&auto=format&fit=crop" alt="Géomètre sur le terrain tenant une mire de nivellement">
+        <div class="about-badge">
+          <div class="num">10+</div>
+          <div class="txt">ANNÉES D'EXPERTISE TERRAIN AU MAROC</div>
+        </div>
+      </div>
+      <div>
+        <div class="reveal">
+          <div class="eyebrow">Le cabinet</div>
+          <h2 class="section-title">Une expertise technique au service de vos projets</h2>
+          <p class="section-sub">AL MIZAN est un cabinet de géomètre-topographe structuré autour d'une exigence simple : chaque mesure doit être exacte, chaque plan doit être fiable, chaque délai doit être respecté.</p>
+        </div>
+        <div class="about-list reveal">
+          <div class="about-list-item">
+            <span class="geo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6" fill="#B08D57"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+            </span>
+            <div>
+              <strong>Expérience terrain</strong>
+              <p>Une pratique quotidienne des chantiers, des lotissements aux grandes infrastructures, partout au Maroc.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <span class="geo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h16M9 4v16"/></svg>
+            </span>
+            <div>
+              <strong>Équipements modernes</strong>
+              <p>Stations totales robotisées, GNSS RTK et drones cartographiques pour une donnée fiable et exploitable.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <span class="geo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <strong>Méthodes de mesure précises</strong>
+              <p>Protocoles rigoureux, double contrôle des données et rattachement systématique au système géodésique national.</p>
+            </div>
+          </div>
+          <div class="about-list-item">
+            <span class="geo-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+            </span>
+            <div>
+              <strong>Accompagnement personnalisé & délais tenus</strong>
+              <p>Un interlocuteur unique du premier relevé à la remise finale des plans, dans les délais annoncés.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-cards stagger">
+      <div class="info-card reveal">
+        <span class="geo-mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><path d="M3 21l6-6M3 21h6v-6"/><path d="M21 3l-6 6M21 3h-6v6"/></svg></span>
+        <h4>Expertise terrain</h4>
+        <p>Intervention directe et rigoureuse sur chaque site, quelle que soit sa complexité.</p>
+      </div>
+      <div class="info-card reveal">
+        <span class="geo-mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg></span>
+        <h4>Équipements professionnels</h4>
+        <p>Un parc instrumental entretenu et régulièrement calibré.</p>
+      </div>
+      <div class="info-card reveal">
+        <span class="geo-mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><path d="M12 2l9 4.5v9L12 22l-9-6.5v-9L12 2z"/><path d="M12 8v8M8 10l8 4M16 10l-8 4"/></svg></span>
+        <h4>Résultats précis</h4>
+        <p>Des livrables exploitables directement par vos bureaux d'études et architectes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Nos services</div>
+      <h2 class="section-title">Un accompagnement technique complet</h2>
+      <p class="section-sub">Du premier relevé à la livraison des plans, nous couvrons l'ensemble des besoins topographiques de vos projets.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:0;">
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">01</span>
+          <img src="https://images.unsplash.com/photo-1628158088936-68ccaaa400dc?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Relevé topographique sur le terrain">
+        </div>
+        <div class="service-body">
+          <h3>Relevé topographique</h3>
+          <p>Mesure précise des terrains et collecte des données nécessaires à vos projets, restituées en plans exploitables.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">02</span>
+          <img src="https://images.unsplash.com/photo-1628155843540-a3d476bb29c3?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Bornage et délimitation de terrain">
+        </div>
+        <div class="service-body">
+          <h3>Bornage & délimitation</h3>
+          <p>Délimitation précise des propriétés et identification contradictoire des limites foncières.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">03</span>
+          <img src="https://images.unsplash.com/photo-1682663810771-89d21838530f?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Implantation d'ouvrage sur chantier">
+        </div>
+        <div class="service-body">
+          <h3>Implantation</h3>
+          <p>Implantation des ouvrages, bâtiments et infrastructures directement sur le terrain avant travaux.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">04</span>
+          <img src="https://images.unsplash.com/photo-1526593714223-37c814d5aea9?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Instrument de précision pour plans topographiques">
+        </div>
+        <div class="service-body">
+          <h3>Plans topographiques</h3>
+          <p>Production de plans topographiques détaillés pour les projets techniques et architecturaux.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">05</span>
+          <img src="https://images.unsplash.com/photo-1680089606451-fa249c95eaa6?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Terrain cartographié pour projet SIG">
+        </div>
+        <div class="service-body">
+          <h3>Cartographie & SIG</h3>
+          <p>Création de cartes précises et traitement des données géographiques pour l'aménagement du territoire.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-media">
+          <span class="service-num">06</span>
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Équipe technique de topographie sur chantier">
+        </div>
+        <div class="service-body">
+          <h3>Topographie de chantier</h3>
+          <p>Accompagnement des entreprises et professionnels pendant les différentes phases du chantier.</p>
+          <a href="#contact" class="service-link">En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPMENT ============ -->
+<section class="equipment" id="expertise">
+  <div class="hud-coord" style="top:60px;left:6%;">N 33°34'23.2"</div>
+  <div class="hud-coord" style="top:88px;left:6%;">E 07°35'25.7"</div>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow on-dark">Équipements</div>
+      <h2 class="section-title" style="color:#fff;">Des équipements de haute précision</h2>
+      <p class="section-sub">Un parc instrumental professionnel, calibré et entretenu, au service de la fiabilité de chaque mesure.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:0;">
+    <div class="equip-scroller">
+      <div class="equip-card reveal">
+        <div class="equip-media">
+          <span class="equip-tag">TS-01</span>
+          <img src="https://images.unsplash.com/photo-1526593740665-f57a5d42dd0a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Station totale de précision">
+        </div>
+        <h4>Station Totale</h4>
+        <p>Mesure d'angles et de distances haute précision, jusqu'au millimètre.</p>
+      </div>
+      <div class="equip-card reveal">
+        <div class="equip-media">
+          <span class="equip-tag">GNSS-02</span>
+          <img src="https://images.unsplash.com/photo-1628155453612-27686cb94a25?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Récepteur GPS GNSS RTK topographique">
+        </div>
+        <h4>GPS GNSS</h4>
+        <p>Positionnement satellite RTK pour un géoréférencement rapide et précis.</p>
+      </div>
+      <div class="equip-card reveal">
+        <div class="equip-media">
+          <span class="equip-tag">UAV-03</span>
+          <img src="https://images.unsplash.com/photo-1686358244616-aed9e9a1d827?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Vue aérienne captée par drone topographique">
+        </div>
+        <h4>Drone topographique</h4>
+        <p>Cartographie aérienne et modèles numériques de terrain à grande échelle.</p>
+      </div>
+      <div class="equip-card reveal">
+        <div class="equip-media">
+          <span class="equip-tag">LS-04</span>
+          <img src="https://images.unsplash.com/photo-1628155933410-8f2a84bb8076?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Scanner laser sur trépied de précision">
+        </div>
+        <h4>Laser scanner</h4>
+        <p>Numérisation 3D des ouvrages et façades pour des relevés architecturaux.</p>
+      </div>
+      <div class="equip-card reveal">
+        <div class="equip-media">
+          <span class="equip-tag">NA-05</span>
+          <img src="https://images.unsplash.com/photo-1545186070-de624ed19875?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Niveau automatique de chantier">
+        </div>
+        <h4>Niveau automatique</h4>
+        <p>Contrôle des altitudes et des pentes pour le nivellement de précision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projets">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Réalisations</div>
+      <h2 class="section-title">Nos réalisations</h2>
+      <p class="section-sub">Une sélection de projets menés à travers différents secteurs et régions du Maroc.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1686358244616-aed9e9a1d827?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Lotissement — relevé et bornage">
+        <div class="project-overlay">
+          <div class="project-type">Bornage & lotissement</div>
+          <div class="project-name">Lotissement Anfa Sud</div>
+          <div class="project-loc">📍 Casablanca</div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Construction — implantation de bâtiment">
+        <div class="project-overlay">
+          <div class="project-type">Implantation & suivi</div>
+          <div class="project-name">Résidence Al Manar</div>
+          <div class="project-loc">📍 Marrakech</div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1680089606451-fa249c95eaa6?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Route — topographie d'infrastructure">
+        <div class="project-overlay">
+          <div class="project-type">Topographie de chantier</div>
+          <div class="project-name">Liaison routière RN9</div>
+          <div class="project-loc">📍 Ouarzazate</div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1610081339336-46c23f599b3e?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Terrain agricole — relevé topographique">
+        <div class="project-overlay">
+          <div class="project-type">Relevé & cartographie</div>
+          <div class="project-name">Domaine agricole Haouz</div>
+          <div class="project-loc">📍 Région Marrakech-Safi</div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Projet immobilier — plans topographiques">
+        <div class="project-overlay">
+          <div class="project-type">Plans techniques</div>
+          <div class="project-name">Tour Gueliz Business</div>
+          <div class="project-loc">📍 Marrakech</div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1599995903128-531fc7fb694b?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Infrastructure — cartographie SIG">
+        <div class="project-overlay">
+          <div class="project-type">Cartographie SIG</div>
+          <div class="project-name">Zone industrielle Sud</div>
+          <div class="project-loc">📍 Agadir</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Méthodologie</div>
+      <h2 class="section-title">Notre méthode de travail</h2>
+      <p class="section-sub">Un processus structuré en quatre étapes, pensé pour la fiabilité des données et le respect des délais.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-num">01</div>
+        <h4>Analyse du besoin</h4>
+        <p>Étude de votre projet, du contexte foncier et des objectifs techniques attendus.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">02</div>
+        <h4>Intervention sur terrain</h4>
+        <p>Relevés et mesures réalisés sur site avec nos équipements de précision.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">03</div>
+        <h4>Traitement des données</h4>
+        <p>Calcul, vérification et modélisation des données collectées en bureau d'études.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-num">04</div>
+        <h4>Livraison des plans</h4>
+        <p>Remise des plans et résultats finaux, dans les formats adaptés à votre usage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why">
+  <div class="hud-coord" style="bottom:40px;right:6%;">Δ ±0.002 M</div>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow on-dark">Nos atouts</div>
+      <h2 class="section-title" style="color:#fff;">Pourquoi choisir notre cabinet ?</h2>
+    </div>
+  </div>
+  <div class="container" style="padding:0;">
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <h4>Précision des mesures</h4>
+        <p>Des protocoles de contrôle stricts pour garantir l'exactitude de chaque relevé.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span>
+        <h4>Expertise technique</h4>
+        <p>Une équipe formée aux dernières normes et méthodes de la géomatique.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><rect x="4" y="7" width="16" height="12" rx="1"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
+        <h4>Équipements modernes</h4>
+        <p>Un parc instrumental régulièrement mis à jour et calibré.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h4>Respect des délais</h4>
+        <p>Un devis sous 24h et un planning d'intervention clair, communiqué en amont.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
+        <h4>Accompagnement personnalisé</h4>
+        <p>Un interlocuteur dédié qui vous suit du premier contact à la remise des plans.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="geo-mark"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.5"><path d="M20 7l-8 5-8-5M4 7l8-5 8 5v10l-8 5-8-5V7z"/></svg></span>
+        <h4>Solutions adaptées</h4>
+        <p>Une approche sur mesure, ajustée à la nature et à l'échelle de chaque projet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZONE INTERVENTION ============ -->
+<section class="zone">
+  <div class="container">
+    <div class="zone-grid">
+      <div class="reveal">
+        <div class="eyebrow">Zone d'intervention</div>
+        <h2 class="section-title">Nous intervenons dans plusieurs villes et régions du Maroc.</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Basé au cœur du Maroc, notre cabinet se déplace sur l'ensemble du territoire national pour vos projets urbains, ruraux ou industriels.</p>
+
+        <div class="city-list">
+          <div class="city-item">Marrakech <span class="code">MA-40</span></div>
+          <div class="city-item">Agadir <span class="code">MA-80</span></div>
+          <div class="city-item">Ouarzazate <span class="code">MA-45</span></div>
+          <div class="city-item">Casablanca <span class="code">MA-20</span></div>
+          <div class="city-item">Rabat <span class="code">MA-10</span></div>
+          <div class="city-item">Tanger <span class="code">MA-90</span></div>
+        </div>
+
+        <a href="#contact" class="btn btn-outline on-light" style="margin-top:36px;">Voir notre zone d'intervention</a>
+      </div>
+
+      <div class="zone-map-visual reveal-scale" id="zoneMapVisual">
+        <!-- decorative topographic SVG injected via JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Avis clients</div>
+      <h2 class="section-title">Ce que disent nos clients</h2>
+    </div>
+
+    <div class="testi-grid stagger">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Travail très professionnel, relevé précis et livraison rapide."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">Y.B</div>
+          <div>
+            <div class="testi-name">Youssef B.</div>
+            <div class="testi-role">Promoteur immobilier, Casablanca</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Excellent accompagnement pendant toutes les étapes du projet."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S.A</div>
+          <div>
+            <div class="testi-name">Sanae A.</div>
+            <div class="testi-role">Architecte, Marrakech</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Une équipe sérieuse et très réactive."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">K.H</div>
+          <div>
+            <div class="testi-name">Karim H.</div>
+            <div class="testi-role">Ingénieur BTP, Agadir</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2 class="section-title">FAQ</h2>
+    </div>
+
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <div class="faq-q"><h4>Quelle est la différence entre un géomètre et un topographe ?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><div class="faq-a-inner">Le géomètre-topographe réalise les mesures de terrain (topographie) et intervient également sur les questions de limites de propriété et de bornage, avec une portée juridique. En pratique, au sein de notre cabinet, les deux compétences sont exercées de façon complémentaire sur chaque projet.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Quand faut-il réaliser un relevé topographique ?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><div class="faq-a-inner">Un relevé est recommandé avant tout achat de terrain, avant le dépôt d'un permis de construire, avant le lancement d'un chantier, ou encore en cas de litige de voisinage sur les limites d'une parcelle.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Quel est le délai d'intervention ?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><div class="faq-a-inner">Nous transmettons un devis sous 24h après réception de votre demande. La date d'intervention sur le terrain est ensuite fixée selon la disponibilité et l'urgence de votre projet.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Intervenez-vous sur tout le territoire ?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><div class="faq-a-inner">Nous intervenons principalement à Marrakech, Agadir, Ouarzazate, Casablanca, Rabat et Tanger, et pouvons nous déplacer dans d'autres régions du Maroc selon la nature du projet.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Comment demander un devis ?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><div class="faq-a-inner">Il vous suffit de remplir le formulaire de contact ci-dessous, ou de nous appeler directement. Nous revenons vers vous avec une proposition adaptée sous 24h.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="hero-grid-overlay" style="opacity:0.25;"></div>
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow on-dark" style="justify-content:center;">Démarrons ensemble</div>
+      <h2>Votre projet commence par une mesure précise.</h2>
+      <p>Parlez-nous de votre projet et recevez une proposition adaptée à vos besoins.</p>
+      <div class="final-actions">
+        <a href="#contact" class="btn btn-primary">Demander un devis</a>
+        <a href="tel:+212522000000" class="btn btn-outline">Appeler maintenant</a>
+      </div>
+      <div class="whatsapp-inline">
+        Ou écrivez-nous directement sur <a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 class="section-title">Discutons de votre projet</h2>
+      <p class="section-sub">Remplissez le formulaire ci-dessous, nous revenons vers vous sous 24h avec une proposition adaptée.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Nom complet</label>
+            <input type="text" id="fname" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="fphone">Téléphone</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+212 6XX XXX XXX" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="email" placeholder="vous@exemple.com" required>
+          </div>
+          <div class="form-group">
+            <label for="fville">Ville</label>
+            <input type="text" id="fville" name="city" placeholder="Marrakech, Casablanca…">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ftype">Type de projet</label>
+          <select id="ftype" name="project_type">
+            <option>Relevé topographique</option>
+            <option>Bornage & délimitation</option>
+            <option>Implantation</option>
+            <option>Plans topographiques</option>
+            <option>Cartographie & SIG</option>
+            <option>Topographie de chantier</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" name="message" placeholder="Décrivez brièvement votre projet…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+        <p class="form-note" id="formNote">Réponse garantie sous 24h ouvrées.</p>
+      </form>
+
+      <div class="reveal">
+        <div class="contact-info">
+          <h3>Nos coordonnées</h3>
+          <div class="ci-row">
+            <span class="geo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 011.11 4.18 2 2 0 013.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+            <div><div class="ci-label">Téléphone</div><div class="ci-val">+212 522 00 00 00</div></div>
+          </div>
+          <div class="ci-row">
+            <span class="geo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M17.6 6.32A8.9 8.9 0 003 12.5a8.85 8.85 0 001.15 4.34L3 21.5l4.8-1.1A8.9 8.9 0 1017.6 6.32z"/></svg></span>
+            <div><div class="ci-label">WhatsApp</div><div class="ci-val">+212 600 00 00 00</div></div>
+          </div>
+          <div class="ci-row">
+            <span class="geo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg></span>
+            <div><div class="ci-label">Email</div><div class="ci-val">contact@almizan-geometre.ma</div></div>
+          </div>
+          <div class="ci-row">
+            <span class="geo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="ci-label">Adresse</div><div class="ci-val">Avenue Mohammed VI, Guéliz, Marrakech</div></div>
+          </div>
+          <div class="ci-row">
+            <span class="geo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B08D57" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><div class="ci-label">Horaires</div><div class="ci-val">Lun – Sam · 8h30 – 18h30</div></div>
+          </div>
+
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps?q=Marrakech,Morocco&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation du cabinet"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="geo-mark">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="#B08D57" stroke-width="1.3"/>
+              <path d="M20 8 L31 30 L9 30 Z" stroke="#B08D57" stroke-width="1.6" fill="none"/>
+              <circle cx="20" cy="20" r="2.4" fill="#B08D57"/>
+            </svg>
+          </span>
+          AL MIZAN
+        </div>
+        <p class="footer-desc">Cabinet de géomètre-topographe au Maroc. Relevés, bornage, implantation, cartographie et accompagnement technique de vos projets, avec précision et fiabilité.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Relevé topographique</a>
+        <a href="#services">Bornage & délimitation</a>
+        <a href="#services">Implantation</a>
+        <a href="#services">Cartographie & SIG</a>
+      </div>
+      <div class="footer-col">
+        <h5>Coordonnées</h5>
+        <p>+212 522 00 00 00</p>
+        <p>contact@almizan-geometre.ma</p>
+        <p>Guéliz, Marrakech, Maroc</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AL MIZAN Géomètres-Topographes. Tous droits réservés.</span>
+      <span>Conçu avec précision.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<div class="floating-buttons">
+  <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.9 8.9 0 003 12.5a8.85 8.85 0 001.15 4.34L3 21.5l4.8-1.1A8.9 8.9 0 1017.6 6.32zM12.04 19.4a7.4 7.4 0 01-3.77-1.03l-.27-.16-2.8.65.6-2.73-.18-.28a7.4 7.4 0 1112.9-3.35c0 4.1-3.34 7.4-6.48 6.9z"/></svg>
+  </a>
+  <a href="tel:+212522000000" class="fab fab-call" aria-label="Appeler">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 011.11 4.18 2 2 0 013.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+</div>
+
+<script>
+/* ============ HEADER SCROLL ============ */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+/* ============ MOBILE MENU ============ */
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+function setMobileMenu(open) {
+  hamburger.classList.toggle('open', open);
+  mobileMenu.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+hamburger.addEventListener('click', () => {
+  setMobileMenu(!mobileMenu.classList.contains('open'));
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  setMobileMenu(false);
+}));
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) setMobileMenu(false);
+});
+
+/* ============ REVEAL ON SCROLL ============ */
+const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+revealEls.forEach(el => io.observe(el));
+
+/* ============ ANIMATED COUNTERS ============ */
+const counters = document.querySelectorAll('.counter');
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(eased * target);
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    }
+  });
+}, {threshold:0.5});
+counters.forEach(c => counterIO.observe(c));
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ============ CONTACT FORM (demo) ============ */
+const form = document.getElementById('contactForm');
+const formNote = document.getElementById('formNote');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  formNote.textContent = 'Merci — votre demande a bien été enregistrée. Nous vous recontactons sous 24h.';
+  formNote.style.color = '#8a6f45';
+  form.reset();
+});
+
+/* ============ HERO HUD COORD TICKER ============ */
+const hudLat = document.getElementById('hudLat');
+const hudLng = document.getElementById('hudLng');
+function jitterCoord(el, base, isLat){
+  if(!el) return;
+  setInterval(() => {
+    const noise = (Math.random()*0.0006 - 0.0003).toFixed(4);
+    const val = (base + parseFloat(noise)).toFixed(4);
+    el.textContent = isLat ? `${val}° N` : `${Math.abs(val)}° W`;
+  }, 1800);
+}
+jitterCoord(hudLat, 33.5731, true);
+jitterCoord(hudLng, -7.5898, false);
+
+/* ============ ZONE MAP DECORATIVE SVG ============ */
+const zoneMapVisual = document.getElementById('zoneMapVisual');
+if (zoneMapVisual) {
+  const pts = [
+    {x:22,y:60,label:'TANGER'},
+    {x:20,y:38,label:'RABAT'},
+    {x:18,y:44,label:'CASABLANCA'},
+    {x:38,y:56,label:'MARRAKECH'},
+    {x:58,y:66,label:'OUARZAZATE'},
+    {x:30,y:78,label:'AGADIR'}
+  ];
+  let dots = '', labels = '', lines = '';
+  pts.forEach((p,i) => {
+    dots += `<circle cx="${p.x}%" cy="${p.y}%" r="4" fill="#B08D57"><animate attributeName="r" values="4;7;4" dur="2.4s" begin="${i*0.3}s" repeatCount="indefinite"/></circle>
+              <circle cx="${p.x}%" cy="${p.y}%" r="9" fill="none" stroke="#5fd8cf" stroke-width="1" opacity="0.5"><animate attributeName="r" values="4;16" dur="2.4s" begin="${i*0.3}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.4s" begin="${i*0.3}s" repeatCount="indefinite"/></circle>`;
+    labels += `<text x="${p.x}%" y="${p.y - 4}%" fill="#e8e4da" font-family="IBM Plex Mono" font-size="9" opacity="0.85">${p.label}</text>`;
+  });
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      if(Math.random() > 0.55) continue;
+      lines += `<line x1="${pts[i].x}%" y1="${pts[i].y}%" x2="${pts[j].x}%" y2="${pts[j].y}%" stroke="#B08D57" stroke-width="0.5" opacity="0.25"/>`;
+    }
+  }
+  let gridLines = '';
+  for(let x=0;x<=100;x+=10){ gridLines += `<line x1="${x}%" y1="0" x2="${x}%" y2="100%" stroke="#1a2d47" stroke-width="1"/>`; }
+  for(let y=0;y<=100;y+=10){ gridLines += `<line x1="0" y1="${y}%" x2="100%" y2="${y}%" stroke="#1a2d47" stroke-width="1"/>`; }
+
+  zoneMapVisual.innerHTML = `<svg width="100%" height="100%" style="position:absolute;inset:0;">
+    ${gridLines}
+    ${lines}
+    ${dots}
+    ${labels}
+  </svg>
+  <div style="position:absolute;bottom:16px;left:16px;font-family:'IBM Plex Mono';font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.08em;">MAROC · ZONE D'INTERVENTION</div>`;
+}
+</script>
+
+</body>
+</html>
