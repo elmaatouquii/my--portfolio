@@ -1,3 +1,4 @@
+// Défilement fluide vers les sections
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,6 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+// Animations d'apparition au scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -21,8 +23,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // Optional: stop observing once revealed
-            // observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -32,54 +32,17 @@ document.querySelectorAll('.reveal').forEach(element => {
 });
 
 
+// Couleur de la navbar au scroll (corrigée : même palette que le design)
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(26, 26, 46, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(26, 26, 46, 0.8)';
-    }
+    if (!navbar) return;
+    navbar.style.background = window.scrollY > 100
+        ? 'rgba(20, 20, 20, 0.95)'
+        : 'rgba(20, 20, 20, 0.85)';
 });
 
 
-
-
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        if (this.href && this.href !== '#') {
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-            setTimeout(() => {
-                this.innerHTML = this.textContent;
-            }, 2000);
-        }
-    });
-});
-
-
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.innerHTML = '';
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-    const originalText = heroSubtitle.textContent;
-    typeWriter(heroSubtitle, originalText, 100);
-}
-
-
-
-
-
+// Menu mobile
 const navHamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -89,7 +52,7 @@ if (navHamburger && mobileMenu) {
         mobileMenu.classList.toggle('active');
     });
 
-    // Close the menu once a link is tapped
+    // Ferme le menu après un clic sur un lien
     document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navHamburger.classList.remove('active');
@@ -97,28 +60,54 @@ if (navHamburger && mobileMenu) {
         });
     });
 }
+
+
+// Formulaire de contact -> WhatsApp (avec suivi GA4)
 function sendToWhatsApp(event) {
     event.preventDefault();
 
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    let message = document.getElementById("message").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const message = document.getElementById("message").value;
 
-    let phoneNumber = "212705912597"; // حيد + وخليه غير الرقم الدولي
+    const phoneNumber = "212705912597"; // numéro international, sans le +
 
-    let text = 
-        "📩 New message from Portfolio %0A%0A" +
-        "👤 First Name: " + firstName + "%0A" +
-        "👤 Last Name: " + lastName + "%0A" +
-        "💬 Message: " + message;
+    const text =
+        "📩 Nouveau message depuis le Portfolio\n\n" +
+        "👤 Prénom : " + firstName + "\n" +
+        "👤 Nom : " + lastName + "\n" +
+        "💬 Message : " + message;
 
-    let url = "https://wa.me/" + phoneNumber + "?text=" + text;
+    // Suivi GA4 : combien de personnes cliquent sur WhatsApp
+    if (typeof gtag === "function") {
+        gtag("event", "click_whatsapp", { location: "contact_form" });
+    }
 
-    window.open(url, "_blank");
+    const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
+    window.open(url, "_blank", "noopener");
 }
 
 
-// Back to top button
+// Suivi GA4 : clic sur le bouton d'appel et le téléchargement du CV
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+        if (typeof gtag === "function") {
+            gtag("event", "click_phone", { location: "portfolio" });
+        }
+    });
+});
+
+const cvLink = document.querySelector('a[href$=".pdf"]');
+if (cvLink) {
+    cvLink.addEventListener('click', () => {
+        if (typeof gtag === "function") {
+            gtag("event", "download_cv");
+        }
+    });
+}
+
+
+// Bouton retour en haut
 const backToTop = document.getElementById('backToTop');
 
 if (backToTop) {
