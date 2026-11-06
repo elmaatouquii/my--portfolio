@@ -31,7 +31,7 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff5e14%22/><text x=%2250%22 y=%2268%22 font-size=%2255%22 font-weight=%22bold%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>ME</text></svg>">
 
-    <!-- Données structurées (aide Google à comprendre qui vous êtes) -->
+    <!-- Données structurées -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -128,12 +128,22 @@
             <p class="about-text reveal reveal-up delay-100">Je suis un développeur web junior passionné par la création d'expériences utilisateur modernes. Je maîtrise les bases de HTML, CSS, JavaScript, PHP et MySQL, ainsi que les frameworks Laravel et React. Je travaille chaque jour pour améliorer mes compétences et approfondir ma maîtrise du front-end et du back-end. Mon objectif est de proposer des solutions web efficaces, propres et professionnelles.</p>
             <h3 class="education-title reveal reveal-scale delay-200">Parcours académique</h3>
             <div class="education-timeline">
-                <div class="education-item reveal reveal-left delay-300">
-                    <h4>Diplôme de Technicien Spécialisé en Développement Logiciel – ISTA Ouarzazate</h4>
-                    <p>Formation approfondie en développement logiciel, axée sur les technologies web (HTML/CSS, JS, PHP) et les frameworks modernes (React, Laravel).</p>
+                <div class="education-item reveal reveal-left delay-100">
+                    <span class="edu-date">2022</span>
+                    <h4>Baccalauréat</h4>
+                    <p>Baccalauréat en Sciences Physiques et Chimiques.</p>
                 </div>
-                <div class="education-item reveal reveal-left delay-400">
-                    <h4>2021-2022 : Baccalauréat en Sciences Physiques (PC)</h4>
+                <div class="education-item reveal reveal-left delay-200">
+                    <span class="edu-date">2022 – 2024</span>
+                    <h4>Études universitaires</h4>
+                    <p>Filière SMPC (Sciences de la Matière Physique et Chimie).</p>
+                    <p>Faculté des Sciences Semlalia (FSSM) – Université Cadi Ayyad, Marrakech.</p>
+                </div>
+                <div class="education-item reveal reveal-left delay-300">
+                    <span class="edu-date">2024 – 2026</span>
+                    <h4>Diplôme de Technicien Spécialisé</h4>
+                    <p>Développement Informatique.</p>
+                    <p>OFPPT – Ouarzazate.</p>
                 </div>
             </div>
         </div>
@@ -313,17 +323,23 @@
         <div class="container">
             <h2 class="section-title reveal reveal-scale">Expérience</h2>
             <div class="experience-timeline">
-                <div class="experience-item reveal reveal-left delay-100">
-                    <div class="experience-header">
-                        <h4>Stagiaire Développeur Full-Stack</h4>
+                <div class="experience-item reveal reveal-up delay-100">
+
+                    <!-- Gauche : textes -->
+                    <div class="experience-content">
                         <span class="experience-period">2025 – 2026</span>
+                        <h4>Stagiaire Développeur Full-Stack</h4>
+                        <p class="experience-company">ORMVAO</p>
+                        <ul class="experience-list">
+                            <li>Développement d'une application web pour des coopératives agricoles.</li>
+                            <li>Création du frontend avec React.js.</li>
+                            <li>Développement du backend/API avec Laravel et MySQL.</li>
+                        </ul>
                     </div>
-                    <p class="experience-company">ORMVAO</p>
-                    <ul class="experience-list">
-                        <li>Développement d'une application web pour des coopératives agricoles.</li>
-                        <li>Création du frontend avec React.js.</li>
-                        <li>Développement du backend/API avec Laravel et MySQL.</li>
-                    </ul>
+
+                    <!-- Droite : image uniquement -->
+                    <img src="ormvao.webp" alt="Siège de l'ORMVAO, Office Régional de Mise en Valeur Agricole de Ouarzazate" class="experience-photo" width="1200" height="888" loading="lazy">
+
                 </div>
             </div>
         </div>
@@ -342,7 +358,7 @@
                 </div>
 
                 <div class="project-card reveal reveal-up delay-200">
-                    <img src="rest/image.png" alt="Site web du restaurant Monsieur Moutarde, façade du restaurant" class="project-thumbnail" width="600" height="200" loading="lazy">
+                    <img src="restaurant-monsieur-moutarde/image.png" alt="Site web du restaurant Monsieur Moutarde, façade du restaurant" class="project-thumbnail" width="600" height="200" loading="lazy">
                     <h3>Monsieur Moutarde</h3>
                     <p>Un site de restaurant haut de gamme avec interface multilingue, affichage élégant du menu et système de réservation fluide.</p>
                     <a href="restaurant-monsieur-moutarde/index.html" class="btn btn-primary" aria-label="Voir le projet Monsieur Moutarde, site de restaurant">Voir le projet</a>
